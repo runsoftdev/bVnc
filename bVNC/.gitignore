@@ -1,0 +1,10 @@
+.settings
+bin
+gen
+dist
+*~
+local.properties
+obj/
+libs/armeabi/
+libs/armeabi-v7a
+gst-build

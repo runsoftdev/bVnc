@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.iiordanov.bVNC"
+    android:installLocation="auto"
+    android:versionCode="3790"
+    android:versionName="v3.7.9" >
+
+    <uses-sdk android:minSdkVersion="14" >
+    </uses-sdk>
+
+    <uses-permission android:name="android.permission.INTERNET" >
+    </uses-permission>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" >
+    </uses-permission>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" >
+    </uses-permission>
+    <uses-permission android:name="android.permission.ACCESS_CHECKIN_PROPERTIES" >
+    </uses-permission>
+
+    <!-- MODIFY_AUDIO_SETTINGS -->
+    <!-- RECORD_AUDIO -->
+    <uses-feature
+        android:name="android.hardware.touchscreen"
+        android:required="false" />
+    <uses-feature
+        android:name="android.hardware.microphone"
+        android:required="false" />
+
+    <supports-screens
+        android:anyDensity="true"
+        android:largeScreens="true"
+        android:normalScreens="true"
+        android:smallScreens="true"
+        android:xlargeScreens="true" />
+
+    <application
+        android:allowBackup="false"
+        android:icon="@drawable/icon"
+        android:label="bVNC"
+        android:theme="@style/AppTheme" >        
+        <activity
+            android:name="RemoteCanvasActivity"
+            android:configChanges="orientation|keyboardHidden|keyboard|screenSize"
+            android:screenOrientation="landscape"
+            android:theme="@android:style/Theme.DeviceDefault"
+            android:windowSoftInputMode="stateHidden|adjustResize" >
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" >
+                </action>
+            </intent-filter>
+            
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <data android:scheme="vnc" />
+            </intent-filter>
+            
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <data android:mimeType="application/vnd.vnc" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".ConnectionListActivity"
+            android:label="@string/shortcut_label"
+            android:theme="@android:style/Theme.DeviceDefault"
+            android:windowSoftInputMode="stateHidden|adjustResize" >
+            <intent-filter>
+                <action android:name="android.intent.action.CREATE_SHORTCUT" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.iiordanov.pubkeygenerator.GeneratePubkeyActivity"
+            android:configChanges="keyboardHidden|orientation"
+            android:screenOrientation="unspecified"
+            android:theme="@android:style/Theme.DeviceDefault"
+            android:windowSoftInputMode="stateHidden|adjustResize" />
+
+        <uses-library
+            android:name="com.sec.android.app.multiwindow"
+            android:required="false" >
+        </uses-library>
+        
+        <receiver
+            android:name="com.iiordanov.util.RemoteReceiver"
+            android:exported="true" >
+            <intent-filter>
+                <action android:name="com.remote.customer_restart" />
+                <action android:name="com.remote.customerend" />
+                <action android:name="com.remote.custome_caht" />
+            </intent-filter>
+        </receiver>
+
+        <meta-data
+            android:name="com.sec.android.support.multiwindow"
+            android:value="true" />
+        <meta-data
+            android:name="com.sec.android.multiwindow.DEFAULT_SIZE_W"
+            android:resource="@dimen/app_defaultsize_w" />
+        <meta-data
+            android:name="com.sec.android.multiwindow.DEFAULT_SIZE_H"
+            android:resource="@dimen/app_defaultsize_h" />
+        <meta-data
+            android:name="com.sec.android.multiwindow.MINIMUM_SIZE_W"
+            android:resource="@dimen/app_minimumsize_w" />
+        <meta-data
+            android:name="com.sec.android.multiwindow.MINIMUM_SIZE_H"
+            android:resource="@dimen/app_minimumsize_h" />
+    </application>
+
+</manifest>

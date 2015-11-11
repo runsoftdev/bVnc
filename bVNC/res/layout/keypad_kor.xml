@@ -1,0 +1,425 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <TableLayout
+        android:id="@+id/keypadMain"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" >
+
+        <TableRow
+            android:id="@+id/numberRow"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/key_hangul_height"
+            android:orientation="horizontal"
+            android:weightSum="100" >
+
+            <Button
+                android:id="@+id/num1"
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/key_hangul_height"
+                android:layout_weight="10"
+                android:text="1" 
+                android:tag="1">
+            </Button>
+            <Button
+                android:id="@+id/num2"
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/key_hangul_height"
+                android:layout_weight="10"
+                android:text="2"
+                android:tag="2" >
+            </Button>
+            <Button
+                android:id="@+id/num3"
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/key_hangul_height"
+                android:layout_weight="10"
+                android:text="3"
+                android:tag="3" >
+            </Button>
+            <Button
+                android:id="@+id/num4"
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/key_hangul_height"
+                android:layout_weight="10"
+                android:text="4" 
+                android:tag="4">
+            </Button>
+            <Button
+                android:id="@+id/num5"
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/key_hangul_height"
+                android:layout_weight="10"
+                android:text="5"
+                android:tag="5" >
+            </Button>
+            <Button
+                android:id="@+id/num6"
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/key_hangul_height"
+                android:layout_weight="10"
+                android:text="6" 
+                android:tag="6">
+            </Button>
+            <Button
+                android:id="@+id/num7"
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/key_hangul_height"
+                android:layout_weight="10"
+                android:text="7"
+                android:tag="7" >
+            </Button>
+            <Button
+                android:id="@+id/num8"
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/key_hangul_height"
+                android:layout_weight="10"
+                android:text="8" 
+                android:tag="8">
+            </Button>
+            <Button
+                android:id="@+id/num9"
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/key_hangul_height"
+                android:layout_weight="10"
+                android:text="9" 
+                android:tag="9">
+            </Button>
+            <Button
+                android:id="@+id/num0"
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/key_hangul_height"
+                android:layout_weight="10"
+                android:text="0"
+                android:tag="0" >
+            </Button>
+            
+        </TableRow>
+        
+        <TableRow
+            android:id="@+id/hangulLine1"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/key_hangul_height"
+            android:orientation="horizontal"
+            android:weightSum="100" >
+
+            <Button
+                android:id="@+id/key_q"
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/key_hangul_height"
+                android:layout_weight="10"
+                android:text="ㅂ"
+                android:tag="q" >
+            </Button>
+            <Button
+                android:id="@+id/key_w"
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/key_hangul_height"
+                android:layout_weight="10"
+                android:text="ㅈ"
+                android:tag="w" >
+            </Button>
+            <Button
+                android:id="@+id/key_e"
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/key_hangul_height"
+                android:layout_weight="10"
+                android:text="ㄷ"
+                android:tag="e" >
+            </Button>
+            <Button
+                android:id="@+id/key_r"
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/key_hangul_height"
+                android:layout_weight="10"
+                android:text="ㄱ" 
+                android:tag="r">
+            </Button>
+            <Button
+                android:id="@+id/key_t"
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/key_hangul_height"
+                android:layout_weight="10"
+                android:text="ㅅ"
+                android:tag="t" >
+            </Button>
+            <Button
+                android:id="@+id/key_y"
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/key_hangul_height"
+                android:layout_weight="10"
+                android:text="ㅛ" 
+                android:tag="y">
+            </Button>
+            <Button
+                android:id="@+id/key_u"
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/key_hangul_height"
+                android:layout_weight="10"
+                android:text="ㅕ"
+                android:tag="u" >
+            </Button>
+            <Button
+                android:id="@+id/key_i"
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/key_hangul_height"
+                android:layout_weight="10"
+                android:text="ㅑ"
+                android:tag="i" >
+            </Button>
+            <Button
+                android:id="@+id/key_o"
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/key_hangul_height"
+                android:layout_weight="10"
+                android:text="ㅐ" 
+                android:tag="o">
+            </Button>
+            <Button
+                android:id="@+id/key_p"
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/key_hangul_height"
+                android:layout_weight="10"
+                android:text="ㅔ"
+                android:tag="p" >
+            </Button>
+            
+        </TableRow>
+        <TableRow
+            android:id="@+id/hangulLine2"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/key_hangul_height"
+            android:orientation="horizontal"
+            android:gravity="center_horizontal"
+            android:weightSum="100" >
+
+            <Button
+                android:id="@+id/key_a"
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/key_hangul_height"
+                android:layout_weight="10"
+                android:text="ㅁ"
+                android:tag="a" >
+            </Button>
+            <Button
+                android:id="@+id/key_s"
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/key_hangul_height"
+                android:layout_weight="10"
+                android:text="ㄴ"
+                android:tag="s" >
+            </Button>
+            <Button
+                android:id="@+id/key_d"
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/key_hangul_height"
+                android:layout_weight="10"
+                android:text="ㅇ"
+                android:tag="d" >
+            </Button>
+            <Button
+                android:id="@+id/key_f"
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/key_hangul_height"
+                android:layout_weight="10"
+                android:text="ㄹ" 
+                android:tag="f">
+            </Button>
+            <Button
+                android:id="@+id/key_g"
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/key_hangul_height"
+                android:layout_weight="10"
+                android:text="ㅎ"
+                android:tag="g" >
+            </Button>
+            <Button
+                android:id="@+id/key_h"
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/key_hangul_height"
+                android:layout_weight="10"
+                android:text="ㅗ" 
+                android:tag="h">
+            </Button>
+            <Button
+                android:id="@+id/key_j"
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/key_hangul_height"
+                android:layout_weight="10"
+                android:text="ㅓ"
+                android:tag="j" >
+            </Button>
+            <Button
+                android:id="@+id/key_k"
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/key_hangul_height"
+                android:layout_weight="10"
+                android:text="ㅏ"
+                android:tag="k" >
+            </Button>
+            <Button
+                android:id="@+id/key_l"
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/key_hangul_height"
+                android:layout_weight="10"
+                android:text="ㅣ" 
+                android:tag="l">
+            </Button>            
+        </TableRow>
+        <TableRow
+            android:id="@+id/hangulLine3"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/key_hangul_height"
+            android:orientation="horizontal"
+            android:gravity="center_horizontal"
+            android:weightSum="100" >
+            <Button
+                android:id="@+id/key_shift"
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/key_hangul_height"
+                android:layout_weight="10"
+                android:text="Shift(off)"
+                android:tag="1" >
+            </Button>
+
+            <Button
+                android:id="@+id/key_z"
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/key_hangul_height"
+                android:layout_weight="10"
+                android:text="ㅋ"
+                android:tag="z" >
+            </Button>
+            <Button
+                android:id="@+id/key_x"
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/key_hangul_height"
+                android:layout_weight="10"
+                android:text="ㅌ"
+                android:tag="x" >
+            </Button>
+            <Button
+                android:id="@+id/key_c"
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/key_hangul_height"
+                android:layout_weight="10"
+                android:text="ㅊ"
+                android:tag="c" >
+            </Button>
+            <Button
+                android:id="@+id/key_v"
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/key_hangul_height"
+                android:layout_weight="10"
+                android:text="ㅍ" 
+                android:tag="v" >
+            </Button>
+            <Button
+                android:id="@+id/key_b"
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/key_hangul_height"
+                android:layout_weight="10"
+                android:text="ㅠ"
+                android:tag="b" >
+            </Button>
+            <Button
+                android:id="@+id/key_n"
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/key_hangul_height"
+                android:layout_weight="10"
+                android:text="ㅜ" 
+                android:tag="n">
+            </Button>
+            <Button
+                android:id="@+id/key_m"
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/key_hangul_height"
+                android:layout_weight="10"
+                android:text="ㅡ"
+                android:tag="m" >
+            </Button>
+            
+            <Button
+                android:id="@+id/key_del"
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/key_hangul_height"
+                android:layout_weight="10"
+                android:text="Del" 
+                android:tag="0xff08">
+            </Button>            
+        </TableRow>
+        <TableRow
+            android:id="@+id/hangulLine4"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/key_hangul_height"
+            android:orientation="horizontal"
+            android:gravity="center_horizontal"
+            android:weightSum="100" >
+            <Button
+                android:id="@+id/key_esc"
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/key_hangul_height"
+                android:layout_weight="8"
+                android:text="Esc"
+                android:tag="0xff1b" >
+            </Button>
+            <Button
+                android:id="@+id/key_show_eng"
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/key_hangul_height"
+                android:layout_weight="10"
+                android:text="영문키보드"
+                android:tag="0xff1b" >
+            </Button>
+            <Button
+                android:id="@+id/key_hide"
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/key_hangul_height"
+                android:layout_weight="10"
+                android:text="숨기기"
+                android:tag="," >
+            </Button>
+            <Button
+                android:id="@+id/key_dot"
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/key_hangul_height"
+                android:layout_weight="5"
+                android:text="."
+                android:tag="." >
+            </Button>
+            
+            <Button
+                android:id="@+id/key_space"
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/key_hangul_height"
+                android:layout_weight="50"
+                android:text="Space"
+                android:tag="" >
+            </Button>
+            
+            <Button
+                android:id="@+id/key_swap"
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/key_hangul_height"
+                android:layout_weight="8"
+                android:text="한/영" 
+                android:tag="0xff31">
+            </Button>
+            <Button
+                android:id="@+id/key_enter"
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/key_hangul_height"
+                android:layout_weight="8"
+                android:text="Enter"
+                android:tag="0xff0d" >
+            </Button>          
+        </TableRow>
+    </TableLayout>
+
+</LinearLayout>
+
+
+
