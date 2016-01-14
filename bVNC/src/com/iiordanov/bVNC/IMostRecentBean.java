@@ -20,7 +20,8 @@
 
 package com.iiordanov.bVNC;
 
-import com.antlersoft.android.db.*;
+import com.antlersoft.android.db.FieldAccessor;
+import com.antlersoft.android.db.TableInterface;
 
 /**
  * @author Michael A. MacDonald

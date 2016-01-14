@@ -18,7 +18,7 @@
 
 package com.iiordanov.tigervnc.rfb;
 
-import com.iiordanov.tigervnc.rdr.*;
+import com.iiordanov.tigervnc.rdr.InStream;
 
 public class RREDecoder extends Decoder {
 

@@ -30,11 +30,9 @@ import java.io.InputStream;
 import java.io.OutputStream;
 import java.net.Socket;
 
-import javax.net.ssl.SSLSocket;
+import com.iiordanov.bVNC.input.RemoteKeyboard;
 
 import android.util.Log;
-
-import com.iiordanov.bVNC.input.RemoteKeyboard;
 
 /**
  * Access the RFB protocol through a socket.

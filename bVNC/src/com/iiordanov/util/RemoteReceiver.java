@@ -5,14 +5,13 @@ import com.iiordanov.bVNC.RemoteCanvasActivity;
 import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
-import android.os.Bundle;
 import android.util.Log;
 
 public class RemoteReceiver extends BroadcastReceiver{
 
 	public static final String CUSTOMER_RESTART_INTENT = "com.remote.customer_restart";
 	public static final String CUSTOMER_END_INTENT = "com.remote.customerend";
-	public static final String CUSTOMER_CHAT_INTENT = "com.remote.custome_caht";
+	public static final String CUSTOMER_CHAT_INTENT = "com.remote.custome_chat";
 
 	
 	@Override
@@ -33,16 +32,11 @@ public class RemoteReceiver extends BroadcastReceiver{
 	    if (action.equals(CUSTOMER_END_INTENT)) {
 	    	RemoteCanvasActivity.mThis.finish();
 
-	    }
-	    
+	    }	    
 	    
 	    if (action.equals(CUSTOMER_CHAT_INTENT)) {
 	    	String msg = intent.getStringExtra("msg");
-	    	RemoteCanvasActivity.mThis.messageArrvied(msg);
-	    	
+	    	RemoteCanvasActivity.mThis.messageArrvied(msg);	    	
 	    }
-	    
-	    
 	}
-
 }

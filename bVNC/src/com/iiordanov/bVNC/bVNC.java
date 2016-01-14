@@ -21,27 +21,26 @@
 
 package com.iiordanov.bVNC;
 
+import com.iiordanov.bVNC.dialogs.AutoXCustomizeDialog;
+import com.iiordanov.bVNC.dialogs.ImportExportDialog;
+import com.iiordanov.bVNC.dialogs.RepeaterDialog;
+import com.iiordanov.pubkeygenerator.GeneratePubkeyActivity;
+
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.app.Dialog;
-import android.app.ActivityManager.MemoryInfo;
 import android.content.DialogInterface;
 import android.content.Intent;
-import android.content.res.Configuration;
-import net.sqlcipher.database.SQLiteDatabase;
-import android.graphics.Point;
 import android.os.Bundle;
-import android.view.Display;
-import android.view.Menu;
-import android.view.MenuItem;
+import android.util.Log;
 import android.view.View;
-import android.view.ViewConfiguration;
 import android.view.WindowManager;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.CompoundButton;
+import android.widget.CompoundButton.OnCheckedChangeListener;
 import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.ListView;
@@ -50,18 +49,6 @@ import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 import android.widget.ToggleButton;
-import android.widget.CompoundButton.OnCheckedChangeListener;
-import android.util.Log;
-
-import com.iiordanov.bVNC.Utils;
-import com.iiordanov.bVNC.dialogs.AutoXCustomizeDialog;
-import com.iiordanov.bVNC.dialogs.ImportExportDialog;
-import com.iiordanov.bVNC.dialogs.IntroTextDialog;
-import com.iiordanov.bVNC.dialogs.RepeaterDialog;
-import com.iiordanov.pubkeygenerator.GeneratePubkeyActivity;
-
-import java.util.ArrayList;
-import java.util.Collections;
 
 /**
  * bVNC is the Activity for setting up VNC connections.

@@ -18,7 +18,8 @@
 
 package com.iiordanov.tigervnc.rfb;
 
-import com.iiordanov.tigervnc.rdr.*;
+import com.iiordanov.tigervnc.rdr.InStream;
+import com.iiordanov.tigervnc.rdr.OutStream;
 
 public class ConnParams {
   static LogWriter vlog = new LogWriter("ConnParams");

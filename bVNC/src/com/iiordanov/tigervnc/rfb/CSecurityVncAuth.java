@@ -18,8 +18,9 @@
 
 package com.iiordanov.tigervnc.rfb;
 
-import com.iiordanov.tigervnc.rdr.*;
-import com.iiordanov.tigervnc.vncviewer.*;
+import com.iiordanov.tigervnc.rdr.InStream;
+import com.iiordanov.tigervnc.rdr.OutStream;
+import com.iiordanov.tigervnc.vncviewer.CConn;
 
 public class CSecurityVncAuth extends CSecurity {
 

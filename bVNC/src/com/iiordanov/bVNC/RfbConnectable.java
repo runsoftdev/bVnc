@@ -19,8 +19,6 @@
 
 package com.iiordanov.bVNC;
 
-import java.io.IOException;
-
 public interface RfbConnectable {
     int framebufferWidth ();
     int framebufferHeight ();

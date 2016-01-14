@@ -21,7 +21,8 @@
 //
 
 package com.iiordanov.tigervnc.rdr;
-import com.iiordanov.jcraft.jzlib.*;
+import com.iiordanov.jcraft.jzlib.JZlib;
+import com.iiordanov.jcraft.jzlib.ZStream;
 
 public class ZlibInStream extends InStream {
 

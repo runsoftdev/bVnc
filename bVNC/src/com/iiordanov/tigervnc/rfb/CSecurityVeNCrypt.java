@@ -19,9 +19,12 @@
 
 package com.iiordanov.tigervnc.rfb;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Iterator;
+import java.util.List;
 
-import com.iiordanov.tigervnc.rdr.*;
+import com.iiordanov.tigervnc.rdr.InStream;
+import com.iiordanov.tigervnc.rdr.OutStream;
 
 public class CSecurityVeNCrypt extends CSecurity {
 

@@ -23,16 +23,15 @@ package com.iiordanov.bVNC.input;
 import java.util.LinkedList;
 import java.util.Queue;
 
-import android.os.SystemClock;
-import android.util.Log;
-import android.view.GestureDetector;
-import android.view.MotionEvent;
-
 import com.iiordanov.android.bc.BCFactory;
 import com.iiordanov.android.bc.IBCScaleGestureDetector;
 import com.iiordanov.android.bc.OnScaleGestureListener;
 import com.iiordanov.bVNC.RemoteCanvas;
 import com.iiordanov.bVNC.RemoteCanvasActivity;
+
+import android.os.SystemClock;
+import android.view.GestureDetector;
+import android.view.MotionEvent;
 
 /**
  * An AbstractInputHandler that uses GestureDetector to detect standard gestures in touch events

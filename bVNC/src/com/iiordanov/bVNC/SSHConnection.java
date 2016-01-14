@@ -29,19 +29,18 @@ import java.security.PublicKey;
 import java.util.Arrays;
 import java.util.concurrent.CountDownLatch;
 
-import android.content.Context;
-import android.os.Handler;
-import android.os.Message;
-import android.util.Base64;
-import android.util.Log;
-
+import com.iiordanov.bVNC.dialogs.GetTextFragment;
 import com.iiordanov.pubkeygenerator.PubkeyUtils;
 import com.trilead.ssh2.Connection;
 import com.trilead.ssh2.ConnectionInfo;
 import com.trilead.ssh2.InteractiveCallback;
 import com.trilead.ssh2.KnownHosts;
 import com.trilead.ssh2.Session;
-import com.iiordanov.bVNC.dialogs.GetTextFragment;
+
+import android.content.Context;
+import android.os.Handler;
+import android.util.Base64;
+import android.util.Log;
 
 /**
  * @author Iordan K Iordanov

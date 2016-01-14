@@ -21,18 +21,23 @@
 
 package com.iiordanov.bVNC;
 
-import java.util.*;
-import java.net.*;
-import javax.net.ssl.*;
+import java.io.ByteArrayInputStream;
+import java.net.Socket;
+import java.security.PublicKey;
+import java.security.cert.Certificate;
+import java.security.cert.CertificateException;
+import java.security.cert.CertificateFactory;
+import java.security.cert.X509Certificate;
+import java.util.ArrayList;
+
+import javax.net.ssl.SSLContext;
+import javax.net.ssl.SSLSocket;
+import javax.net.ssl.TrustManager;
+import javax.net.ssl.X509TrustManager;
 
 import android.os.Message;
 import android.util.Base64;
 import android.util.Log;
-
-import java.security.*;
-import java.security.cert.*;
-import java.security.cert.Certificate;
-import java.io.*;
 
 public class X509Tunnel extends TLSTunnelBase {
 

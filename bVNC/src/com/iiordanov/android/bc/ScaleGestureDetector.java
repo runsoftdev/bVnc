@@ -42,6 +42,7 @@ import android.util.DisplayMetrics;
 import android.util.FloatMath;
 import android.util.Log;
 import android.view.MotionEvent;
+import android.view.View;
 import android.view.ViewConfiguration;
 
 /**

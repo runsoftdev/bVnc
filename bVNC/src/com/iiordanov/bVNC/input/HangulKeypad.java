@@ -4,7 +4,6 @@ import com.iiordanov.bVNC.R;
 import com.iiordanov.bVNC.RemoteCanvas;
 
 import android.content.Context;
-import android.text.TextUtils;
 import android.util.AttributeSet;
 import android.view.KeyEvent;
 import android.view.LayoutInflater;
@@ -12,7 +11,6 @@ import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
 import android.widget.LinearLayout;
-import android.widget.Button;
 
 public class HangulKeypad extends LinearLayout implements OnClickListener {
 	private RemoteCanvas mRemotecanvas;
@@ -172,8 +170,7 @@ public class HangulKeypad extends LinearLayout implements OnClickListener {
 			mRemotecanvas.getKeyboard().processLocalKeyEvent(KeyEvent.KEYCODE_ENTER, new KeyEvent(KeyEvent.ACTION_DOWN,KeyEvent.KEYCODE_ENTER));
 			
 		}
-		else {
-		
+		else {		
 			String charactoers = (String)v.getTag();
 			
 			KeyEvent evt = new KeyEvent(0, isShiftClicked? charactoers.toUpperCase() : charactoers, 0, 0);		

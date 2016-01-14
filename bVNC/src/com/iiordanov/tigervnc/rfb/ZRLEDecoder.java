@@ -18,7 +18,8 @@
 
 package com.iiordanov.tigervnc.rfb;
 
-import com.iiordanov.tigervnc.rdr.*;
+import com.iiordanov.tigervnc.rdr.InStream;
+import com.iiordanov.tigervnc.rdr.ZlibInStream;
 
 public class ZRLEDecoder extends Decoder {
 

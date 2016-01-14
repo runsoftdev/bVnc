@@ -31,7 +31,6 @@ import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
 import android.net.Uri;
-import android.os.Debug;
 import android.util.Log;
 import android.widget.ImageView.ScaleType;
 import net.sqlcipher.database.SQLiteDatabase;

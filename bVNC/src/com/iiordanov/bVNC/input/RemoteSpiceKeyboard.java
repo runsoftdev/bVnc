@@ -26,15 +26,15 @@ import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.util.HashMap;
 
-import android.content.res.Resources;
-import android.os.Handler;
-import android.view.KeyEvent;
-import android.view.MotionEvent;
-
 import com.iiordanov.bVNC.Constants;
 import com.iiordanov.bVNC.MetaKeyBean;
 import com.iiordanov.bVNC.RemoteCanvas;
 import com.iiordanov.bVNC.SpiceCommunicator;
+
+import android.content.res.Resources;
+import android.os.Handler;
+import android.view.KeyEvent;
+import android.view.MotionEvent;
 
 public class RemoteSpiceKeyboard extends RemoteKeyboard {
 	private final static String TAG = "RemoteSpiceKeyboard";

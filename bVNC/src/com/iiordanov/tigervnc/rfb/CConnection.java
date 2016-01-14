@@ -18,10 +18,13 @@
 
 package com.iiordanov.tigervnc.rfb;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Iterator;
+import java.util.List;
 
 import com.iiordanov.bVNC.RemoteCanvas;
-import com.iiordanov.tigervnc.rdr.*;
+import com.iiordanov.tigervnc.rdr.InStream;
+import com.iiordanov.tigervnc.rdr.OutStream;
 
 abstract public class CConnection extends CMsgHandler {
 

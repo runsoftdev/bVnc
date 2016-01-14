@@ -21,8 +21,6 @@
 package com.iiordanov.bVNC;
 
 import android.graphics.Matrix;
-import android.util.Log;
-import android.widget.Toast;
 import android.widget.ImageView.ScaleType;
 
 /**

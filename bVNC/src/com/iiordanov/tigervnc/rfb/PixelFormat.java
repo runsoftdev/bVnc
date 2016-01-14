@@ -22,9 +22,10 @@
 
 package com.iiordanov.tigervnc.rfb;
 
-import android.graphics.Color;
+import com.iiordanov.tigervnc.rdr.InStream;
+import com.iiordanov.tigervnc.rdr.OutStream;
 
-import com.iiordanov.tigervnc.rdr.*;
+import android.graphics.Color;
 
 public class PixelFormat {
 

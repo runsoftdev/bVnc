@@ -21,26 +21,25 @@
 package com.iiordanov.bVNC.dialogs;
 
 import com.iiordanov.bVNC.ConnectionBean;
+import com.iiordanov.bVNC.Database;
 import com.iiordanov.bVNC.MostRecentBean;
 import com.iiordanov.bVNC.R;
-import com.iiordanov.bVNC.Database;
-import com.iiordanov.bVNC.bVNC;
 
 import android.app.Activity;
 import android.app.Dialog;
 import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
-import net.sqlcipher.database.SQLiteDatabase;
 import android.os.Bundle;
 import android.text.Html;
 import android.text.method.LinkMovementMethod;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.view.View;
 import android.view.MenuItem.OnMenuItemClickListener;
+import android.view.View;
 import android.widget.Button;
 import android.widget.LinearLayout.LayoutParams;
 import android.widget.TextView;
+import net.sqlcipher.database.SQLiteDatabase;
 
 /**
  * @author Michael A. MacDonald

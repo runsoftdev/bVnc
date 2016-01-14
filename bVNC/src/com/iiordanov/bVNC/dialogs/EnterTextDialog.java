@@ -20,25 +20,23 @@
 
 package com.iiordanov.bVNC.dialogs;
 
-import java.io.IOException;
-
 import java.util.ArrayList;
 
 import com.iiordanov.bVNC.R;
-import com.iiordanov.bVNC.SentTextBean;
 import com.iiordanov.bVNC.RemoteCanvasActivity;
+import com.iiordanov.bVNC.SentTextBean;
 import com.iiordanov.bVNC.input.RemoteKeyboard;
 
 import android.app.Activity;
 import android.app.Dialog;
 import android.content.Context;
 import android.database.Cursor;
-import net.sqlcipher.database.SQLiteDatabase;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageButton;
+import net.sqlcipher.database.SQLiteDatabase;
 
 /**
  * @author Michael A. MacDonald

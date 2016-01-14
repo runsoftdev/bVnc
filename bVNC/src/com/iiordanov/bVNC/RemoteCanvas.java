@@ -296,7 +296,6 @@ public class RemoteCanvas extends ImageView implements LibFreeRDP.UIEventListene
                             showFatalMessageAndQuit(error);
                             
                         }
-                        sendBroadcastDisconnect();
                     }
                 }
             }
@@ -319,12 +318,12 @@ public class RemoteCanvas extends ImageView implements LibFreeRDP.UIEventListene
     private void sendBroadcastDisconnect() {
 		try {
 		    Intent broadcastIntent = new Intent();
-		    broadcastIntent.setAction("org.mosquitto.android.mqtt.MSGRECVD");
-		    broadcastIntent.putExtra("org.mosquitto.android.mqtt.MSGRECVD_MSGBODY", String.format(Locale.getDefault(),
+		    broadcastIntent.setAction("runsoft.com.runsupport.mqtt.MSGRECVD");
+		    broadcastIntent.putExtra("runsoft.com.runsupport.mqtt.MSGRECVD_MSGBODY", String.format(Locale.getDefault(),
 		            "{\"mode\":\"%s\",\"usercode\":\"%s\",\"remotecode\":\"%s\",\"client_rip\":\"%s\",\"clientcode\":\"%s\",\"client_pip\":\"%s\",\"connectID\":\"%s\"}"
 		            , "customerend"
 		            , ""
-		            , ""
+		            , connection.getIdHash()
 		            , ""
 		            , ""
 		          ,""
@@ -834,7 +833,7 @@ public class RemoteCanvas extends ImageView implements LibFreeRDP.UIEventListene
      */
     public void onDestroy() {
         Log.v(TAG, "Cleaning up resources");
-        
+        sendBroadcastDisconnect();
         removeCallbacksAndMessages();
         if (clipboardMonitorTimer != null) {
             clipboardMonitorTimer.cancel();
@@ -853,7 +852,7 @@ public class RemoteCanvas extends ImageView implements LibFreeRDP.UIEventListene
         
         disposeDrawable ();
         
-        sendBroadcastDisconnect();
+        
     }
     
     

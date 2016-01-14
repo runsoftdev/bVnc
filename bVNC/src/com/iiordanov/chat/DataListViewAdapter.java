@@ -1,9 +1,9 @@
 package com.iiordanov.chat;
 
+import java.util.ArrayList;
+
 import android.content.Context;
 import android.widget.BaseAdapter;
-
-import java.util.ArrayList;
 
 
 public abstract class DataListViewAdapter<T> extends BaseAdapter {

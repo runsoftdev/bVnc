@@ -19,31 +19,40 @@
 
 package com.iiordanov.tigervnc.rfb;
 
-import javax.net.ssl.*;
-
-import java.security.cert.*;
-import java.security.KeyStore;
-import java.security.MessageDigest;
-import java.security.NoSuchAlgorithmException;
-import java.security.NoSuchProviderException;
 import java.io.File;
-import java.io.InputStream;
 import java.io.FileInputStream;
+import java.io.InputStream;
+import java.security.KeyStore;
+import java.security.cert.CRL;
+import java.security.cert.CertStore;
+import java.security.cert.CertStoreParameters;
+import java.security.cert.CertificateException;
+import java.security.cert.CertificateFactory;
+import java.security.cert.CollectionCertStoreParameters;
+import java.security.cert.PKIXBuilderParameters;
+import java.security.cert.X509CertSelector;
+import java.security.cert.X509Certificate;
 import java.util.ArrayList;
 import java.util.Collection;
 
-import android.content.DialogInterface;
-import android.os.Looper;
-import android.os.Message;
-import android.util.Log;
+import javax.net.ssl.CertPathTrustManagerParameters;
+import javax.net.ssl.HandshakeCompletedEvent;
+import javax.net.ssl.HandshakeCompletedListener;
+import javax.net.ssl.SSLContext;
+import javax.net.ssl.SSLSession;
+import javax.net.ssl.SSLSocket;
+import javax.net.ssl.SSLSocketFactory;
+import javax.net.ssl.TrustManager;
+import javax.net.ssl.TrustManagerFactory;
+import javax.net.ssl.X509TrustManager;
 
-import com.iiordanov.bVNC.Utils;
-import com.iiordanov.bVNC.RemoteCanvas;
-import com.iiordanov.bVNC.RemoteCanvasActivity;
 import com.iiordanov.bVNC.Constants;
-import com.iiordanov.bVNC.bVNC;
-import com.iiordanov.tigervnc.rdr.*;
-import org.apache.commons.*;
+import com.iiordanov.bVNC.RemoteCanvas;
+import com.iiordanov.tigervnc.rdr.InStream;
+import com.iiordanov.tigervnc.rdr.JavaInStream;
+import com.iiordanov.tigervnc.rdr.JavaOutStream;
+
+import android.os.Message;
 
 public class CSecurityTLS extends CSecurity {
 

@@ -1,13 +1,14 @@
 package com.iiordanov.bVNC.input;
 
+import com.iiordanov.bVNC.MetaKeyBean;
+import com.iiordanov.bVNC.RemoteCanvas;
+import com.iiordanov.bVNC.RfbConnectable;
+
 import android.content.Context;
 import android.os.Handler;
 import android.os.SystemClock;
 import android.view.KeyCharacterMap;
 import android.view.KeyEvent;
-import com.iiordanov.bVNC.MetaKeyBean;
-import com.iiordanov.bVNC.RfbConnectable;
-import com.iiordanov.bVNC.RemoteCanvas;
 
 public abstract class RemoteKeyboard {
     public final static int SCAN_ESC = 1;
@@ -52,6 +53,7 @@ public abstract class RemoteKeyboard {
     
     // Use camera button as meta key for right mouse button
     boolean cameraButtonDown = false;
+    protected boolean isChating = false;
     
     // Keep track when a seeming key press was the result of a menu shortcut
     int lastKeyDown;
@@ -81,6 +83,10 @@ public abstract class RemoteKeyboard {
             android.os.Build.MANUFACTURER.contains("BlackBerry")) {
             bb = true;
         }
+    }
+    
+    public void setIsChating(boolean isChating) {
+    	this.isChating = isChating;
     }
 
     public boolean processLocalKeyEvent(int keyCode, KeyEvent evt) {

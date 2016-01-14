@@ -3,7 +3,7 @@
     package="com.iiordanov.bVNC"
     android:installLocation="auto"
     android:versionCode="3790"
-    android:versionName="v3.7.9" >
+    android:versionName="v3.8.0" >
 
     <uses-sdk android:minSdkVersion="14" >
     </uses-sdk>
@@ -90,7 +90,7 @@
             <intent-filter>
                 <action android:name="com.remote.customer_restart" />
                 <action android:name="com.remote.customerend" />
-                <action android:name="com.remote.custome_caht" />
+                <action android:name="com.remote.custome_chat" />
             </intent-filter>
         </receiver>
 

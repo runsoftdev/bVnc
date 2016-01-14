@@ -1,16 +1,12 @@
 package com.iiordanov.bVNC.input;
 
-import android.graphics.PointF;
-import android.os.SystemClock;
-import android.view.KeyEvent;
-import android.view.MotionEvent;
-import android.view.View;
-
-import com.iiordanov.android.bc.BCFactory;
 import com.iiordanov.bVNC.R;
 import com.iiordanov.bVNC.RemoteCanvas;
 import com.iiordanov.bVNC.RemoteCanvasActivity;
-import com.iiordanov.bVNC.R.string;
+
+import android.graphics.PointF;
+import android.view.KeyEvent;
+import android.view.MotionEvent;
 
 public class TouchMouseSwipePanInputHandler extends AbstractGestureInputHandler {
     static final String TAG = "TouchMouseSwipePanInputHandler";

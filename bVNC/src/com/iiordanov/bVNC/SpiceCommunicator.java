@@ -4,6 +4,11 @@ import java.util.Collection;
 import java.util.HashMap;
 import java.util.Iterator;
 
+import com.freerdp.freerdpcore.services.LibFreeRDP.UIEventListener;
+import com.gstreamer.GStreamer;
+import com.iiordanov.bVNC.input.RemoteKeyboard;
+import com.iiordanov.bVNC.input.RemoteSpicePointer;
+
 import android.app.PendingIntent;
 import android.content.BroadcastReceiver;
 import android.content.Context;
@@ -16,12 +21,6 @@ import android.hardware.usb.UsbManager;
 import android.os.Handler;
 import android.os.SystemClock;
 import android.util.Log;
-
-import com.freerdp.freerdpcore.services.LibFreeRDP.UIEventListener;
-import com.iiordanov.bVNC.input.RemoteKeyboard;
-import com.iiordanov.bVNC.input.RemoteSpicePointer;
-import com.iiordanov.bVNC.Constants;
-import com.gstreamer.*;
 
 public class SpiceCommunicator implements RfbConnectable {
     private final static String TAG = "SpiceCommunicator";

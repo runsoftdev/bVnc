@@ -53,6 +53,7 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.res.Configuration;
 import android.database.Cursor;
+import android.graphics.Color;
 import android.graphics.Rect;
 import android.graphics.drawable.Drawable;
 import android.net.Uri;
@@ -69,7 +70,6 @@ import android.view.KeyEvent;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.MotionEvent;
-import android.view.TextureView;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.View.OnKeyListener;
@@ -119,7 +119,6 @@ public class RemoteCanvasActivity extends FragmentActivity implements OnKeyListe
                                                 R.id.itemInputSingleHanded };
     private static final int scalingModeIds[] = { R.id.itemZoomable, R.id.itemFitToScreen,
                                                   R.id.itemOneToOne};
-
     ZoomControls zoomer;
     Panner panner;
     SSHConnection sshConnection;
@@ -155,10 +154,11 @@ public class RemoteCanvasActivity extends FragmentActivity implements OnKeyListe
         initialize();
         if (connection != null && connection.isReadyForConnection())
         	continueConnecting();
-        initChatListView();
+        getWindow().addFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON);
+    
+        initChatListView();        
     }
     
-
 	void initialize () {
         if (android.os.Build.VERSION.SDK_INT >= 9) {
             android.os.StrictMode.ThreadPolicy policy = new android.os.StrictMode.ThreadPolicy.Builder().permitAll().build();
@@ -202,7 +202,7 @@ public class RemoteCanvasActivity extends FragmentActivity implements OnKeyListe
             if (connection.isSaved()) {
                 connection.saveAndWriteRecent(false);
             }
-            // we need to save the connection to display the loading screen, so otherwise we should exit
+            // we need to save the connection to display the loading screen, onclso otherwise we should exit
             if (!connection.isReadyForConnection()) {
             	if (!connection.isSaved()) {
             		Log.i(TAG, "Exiting - Insufficent information to connect and connection was not saved.");
@@ -328,8 +328,14 @@ public class RemoteCanvasActivity extends FragmentActivity implements OnKeyListe
         zoomer.setOnZoomKeyboardClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                InputMethodManager inputMgr = (InputMethodManager)getSystemService(Context.INPUT_METHOD_SERVICE);
-                inputMgr.toggleSoftInput(0, 0);
+            	//TODO zoomer keypad
+            	canvas.getKeyboard().processLocalKeyEvent(144, new KeyEvent(144,0));
+            	
+                keyKor.setVisibility(View.GONE);                   
+                               
+            	
+            	keypad.setVisibility(View.VISIBLE);
+            	keypad.setTag("1");
             }
 
         });
@@ -366,12 +372,13 @@ public class RemoteCanvasActivity extends FragmentActivity implements OnKeyListe
             keyStow.setVisibility(View.GONE);
         else {
             keyStow.setVisibility(View.VISIBLE);
-            if(keyKor != null)
-            	keyKor.setVisibility(View.VISIBLE);
+//            if(keyKor != null)
+//            	keyKor.setVisibility(View.VISIBLE);
         }
     }
-    
-    /**
+   
+
+	/**
      * Initializes the on-screen keys for meta keys and arrow keys.
      */
     private void initializeOnScreenKeys () {
@@ -498,7 +505,8 @@ public class RemoteCanvasActivity extends FragmentActivity implements OnKeyListe
 			
 			@Override
 			public void onClick(View v) {
-				btnChatShowToggle.setVisibility(View.GONE);
+				
+				btnChatShowToggle.setVisibility(View.VISIBLE);
 				keypad.setVisibility(View.GONE);	
 				keypad.setTag("");
 				keyKor.setVisibility(View.VISIBLE);
@@ -518,21 +526,19 @@ public class RemoteCanvasActivity extends FragmentActivity implements OnKeyListe
                
                 if (TextUtils.isEmpty(toggle)) {
                 	InputMethodManager inputMgr = (InputMethodManager)getSystemService(Context.INPUT_METHOD_SERVICE);
-	                inputMgr.toggleSoftInput(InputMethodManager.HIDE_IMPLICIT_ONLY, 0);
+	                inputMgr.hideSoftInputFromWindow(btnChatShowToggle.getWindowToken(), 0);
+	                
 	                new Handler().postDelayed(new Runnable() {
 						
 						@Override
 						public void run() {
 							canvas.getKeyboard().processLocalKeyEvent(144, new KeyEvent(144,0));
 		                	
-			                keyKor.setVisibility(View.GONE);                   
-			                btnChatShowToggle.setVisibility(View.GONE);                   
-		                	
+			                keyKor.setVisibility(View.GONE);		                	
 		                	keypad.setVisibility(View.VISIBLE);
 		                	keypad.setTag("1");
 						}
-					}, 500);
-	                
+					}, 500);	                
                 }
                 else {
                 	keyKor.setVisibility(View.VISIBLE);
@@ -598,7 +604,7 @@ public class RemoteCanvasActivity extends FragmentActivity implements OnKeyListe
             }
         });
         
-        // TODO: Evaluate whether I should instead be using:
+        
         // vncCanvas.sendMetaKey(MetaKeyBean.keyArrowLeft);
 
         // Define action of arrow keys.
@@ -732,7 +738,6 @@ public class RemoteCanvasActivity extends FragmentActivity implements OnKeyListe
             connection.getExtraKeysToggleType() == Constants.EXTRA_KEYS_ON) {
             layoutKeys.setVisibility(View.VISIBLE);
             layoutKeys.invalidate();
-            btnChatShowToggle.setVisibility(View.GONE);
             return;
         }
         
@@ -1081,9 +1086,9 @@ public class RemoteCanvasActivity extends FragmentActivity implements OnKeyListe
         case R.id.itemSpecialKeys:
             showDialog(R.layout.metakey);
             return true;
-        case R.id.itemColorMode:
-            selectColorModel();
-            return true;
+//        case R.id.itemColorMode:
+//            selectColorModel();
+//            return true;
             // Following sets one of the scaling options
         case R.id.itemZoomable:
         case R.id.itemOneToOne:
@@ -1100,9 +1105,9 @@ public class RemoteCanvasActivity extends FragmentActivity implements OnKeyListe
             canvas.closeConnection();
             finish();
             return true;
-        case R.id.itemEnterText:
-            showDialog(R.layout.entertext);
-            return true;
+//        case R.id.itemEnterText:
+//            showDialog(R.layout.entertext);
+//            return true;
         case R.id.itemCtrlAltDel:
             canvas.getKeyboard().sendMetaKey(MetaKeyBean.keyCtrlAltDel);
             return true;
@@ -1212,6 +1217,7 @@ public class RemoteCanvasActivity extends FragmentActivity implements OnKeyListe
     @Override
     protected void onDestroy() {
         super.onDestroy();
+        getWindow().clearFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON);
         mThis = null;
         if (canvas != null)
             canvas.closeConnection();
@@ -1231,7 +1237,11 @@ public class RemoteCanvasActivity extends FragmentActivity implements OnKeyListe
     public boolean onKey(View v, int keyCode, KeyEvent evt) {
 
         boolean consumed = false;
-
+        if (keyCode == KeyEvent.KEYCODE_BACK && chat_layout.getVisibility() == View.VISIBLE) {
+        
+        	chat_layout.setVisibility(View.GONE);
+        	return false;
+        }
         if (keyCode == KeyEvent.KEYCODE_MENU) {
             if (evt.getAction() == KeyEvent.ACTION_DOWN)
                 return super.onKeyDown(keyCode, evt);
@@ -1245,6 +1255,7 @@ public class RemoteCanvasActivity extends FragmentActivity implements OnKeyListe
             } else if (evt.getAction() == KeyEvent.ACTION_UP){
                 consumed = inputHandler.onKeyUp(keyCode, evt);
             }
+            
             resetOnScreenKeys (keyCode);
         } catch (NullPointerException e) { }
 
@@ -1390,7 +1401,6 @@ public class RemoteCanvasActivity extends FragmentActivity implements OnKeyListe
     }
     
     public boolean getAccelerationEnabled() {
-        // TODO: Make this a config option.
         return true;
     }
 
@@ -1433,20 +1443,17 @@ public class RemoteCanvasActivity extends FragmentActivity implements OnKeyListe
     private ListView listView;
     private View chat_layout;
     private Button btnChatShowToggle;
-    private EditText editMsg;
+    
     private ArrayList<ChatData> dataList = new ArrayList<ChatData>();
     
     private void initChatListView() {
 
     	listView = (ListView) findViewById(R.id.listViewChat);
-    	editMsg = (EditText) findViewById(R.id.editMsg);
     	btnChatShowToggle = (Button) findViewById(R.id.btnChatShowToggle);
     	Button btnChatClose = (Button) findViewById(R.id.btnChatClose);
     	Button btnSend = (Button) findViewById(R.id.btnSend);
     	chat_layout = findViewById(R.id.chat_layout);
-    	
-    	editMsg.setText("");
-    	
+    	    	
 		if(adapter == null) {
 			
 			adapter = new ChatListAdapter(this, dataList);
@@ -1460,10 +1467,13 @@ public class RemoteCanvasActivity extends FragmentActivity implements OnKeyListe
 			public void onClick(View v) {
 				if(TextUtils.isEmpty((CharSequence) btnChatShowToggle.getTag())) {
 					chat_layout.setVisibility(View.VISIBLE);
+					canvas.getKeyboard().setIsChating(true);
+										
 					btnChatShowToggle.setTag("toggle on");
 					btnChatShowToggle.setVisibility(View.GONE);
 				}
 				else {
+					canvas.getKeyboard().setIsChating(false);
 					chat_layout.setVisibility(View.GONE);
 					btnChatShowToggle.setTag("");					
 				}				
@@ -1475,44 +1485,59 @@ public class RemoteCanvasActivity extends FragmentActivity implements OnKeyListe
 			@Override
 			public void onClick(View v) {
 				btnChatShowToggle.setVisibility(View.VISIBLE);
+				canvas.getKeyboard().setIsChating(false);
 				chat_layout.setVisibility(View.GONE);
 				btnChatShowToggle.setTag("");
 			}
-		});
+		});			
 		
 		btnSend.setOnClickListener(new OnClickListener() {
 			
 			@Override
 			public void onClick(View v) {
-				// TODO Auto-generated method stub
-				String msg = editMsg.getText().toString().trim();
-				editMsg.setError(null);
-				if(TextUtils.isEmpty(msg)) {
-					editMsg.setError("보내실 메시지를 입력하세요.");
-					editMsg.requestFocus();
-					return;
-				}
-				try {
-					Intent broadcastIntent = new Intent();
-					broadcastIntent.setAction("org.mosquitto.android.mqtt.MSGRECVD");
-					broadcastIntent.putExtra("org.mosquitto.android.mqtt.MSGRECVD_MSGBODY", String
-							.format(Locale.getDefault(), "{\"mode\":\"%s\",\"msg\":\"%s\"}", "map_find_send_msg", msg));
-					sendBroadcast(broadcastIntent);
-				} catch (Exception e1) {
-					e1.printStackTrace();
-				}
-				
-				ChatData chatData = new ChatData();
-		    	chatData.msg = "나 : "+msg;
-		    	chatData.date = getRegdateRelative();
-		    	
-		    	dataList.add(0, chatData);
-		    	
-		    	adapter.notifyDataSetChanged();
-		    	
-				InputMethodManager inputMgr = (InputMethodManager)getSystemService(Context.INPUT_METHOD_SERVICE);
-                inputMgr.toggleSoftInput(InputMethodManager.HIDE_IMPLICIT_ONLY, 0);
-				editMsg.setText("");
+				// TODO runsoft.com.runsupport.mqtt.MSGRECVD
+				final EditText edit = new EditText(RemoteCanvasActivity.this);
+			    edit.setBackgroundColor(Color.WHITE);
+			    edit.setTextColor(getResources().getColor(R.color.button_text_color));
+
+				new AlertDialog.Builder(RemoteCanvasActivity.this)
+		        .setTitle("채팅메시지 입력")
+		        .setView(edit)
+		        .setNegativeButton("보내기",
+		            new DialogInterface.OnClickListener() {
+					@Override
+					public void onClick(DialogInterface dialog, int which) {
+						String msg = edit.getText().toString().trim();
+						
+						if (TextUtils.isEmpty(msg)) {
+						    Toast.makeText(mThis, "보내실 메시지를 입력해주세", Toast.LENGTH_LONG).show();
+							
+							return;
+						}
+						try {
+							Intent broadcastIntent = new Intent();
+							broadcastIntent.setAction("runsoft.com.runsupport.mqtt.MSGRECVD");
+							broadcastIntent.putExtra("runsoft.com.runsupport.mqtt.MSGRECVD_MSGBODY", String.format(
+									Locale.getDefault(), "{\"mode\":\"%s\",\"msg\":\"%s\"}", "map_find_send_msg", msg));
+							sendBroadcast(broadcastIntent);
+						} catch (Exception e1) {
+							e1.printStackTrace();
+						}
+
+						ChatData chatData = new ChatData();
+						chatData.msg = "나 : " + msg;
+						chatData.date = getRegdateRelative();
+
+						dataList.add(0, chatData);
+
+						adapter.notifyDataSetChanged();
+
+						InputMethodManager inputMgr = (InputMethodManager) getSystemService(
+								Context.INPUT_METHOD_SERVICE);
+						inputMgr.toggleSoftInput(InputMethodManager.HIDE_IMPLICIT_ONLY, 0);
+						
+		              }
+		            }).create().show();				
 			}
 		});
 	}

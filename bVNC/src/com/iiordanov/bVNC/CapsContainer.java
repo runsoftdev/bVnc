@@ -23,8 +23,8 @@
 //
 package com.iiordanov.bVNC;
 
-import java.util.Vector;
 import java.util.Hashtable;
+import java.util.Vector;
 
 class CapsContainer {
 

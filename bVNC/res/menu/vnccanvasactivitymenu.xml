@@ -78,17 +78,17 @@
         android:icon="@android:drawable/ic_menu_share"
         android:numericShortcut="8"
         android:title="@string/ctrl_alt_del"/>
+    
+    <!--
     <item
         android:id="@+id/itemEnterText"
         android:alphabeticShortcut="e"
         android:icon="@android:drawable/ic_menu_edit"
         android:title="@string/enter_text"/>
-    <!--
     <group android:checkableBehavior="all">
     	<item android:numericShortcut="6" android:alphabeticShortcut="f" android:id="@+id/itemFollowMouse" android:title="@string/pan_follow_mouse"/>
     	<item android:title="@string/mouse_follow_pan" android:id="@+id/itemFollowPan"/>
     </group>
-    -->
     <item
         android:id="@+id/itemColorMode"
         android:alphabeticShortcut="c"
@@ -96,6 +96,8 @@
         android:numericShortcut="3"
         android:title="@string/color_mode">
     </item>
+    -->
+    
     <item
         android:id="@+id/itemCenterMouse"
         android:alphabeticShortcut="m"

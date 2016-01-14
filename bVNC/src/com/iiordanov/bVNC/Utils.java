@@ -22,7 +22,6 @@ package com.iiordanov.bVNC;
 
 import java.io.File;
 import java.io.FileInputStream;
-import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStreamReader;
@@ -38,16 +37,16 @@ import com.antlersoft.android.contentxml.SqliteElement.ReplaceStrategy;
 
 import android.app.Activity;
 import android.app.ActivityManager;
-import android.app.AlertDialog;
 import android.app.ActivityManager.MemoryInfo;
+import android.app.AlertDialog;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.DialogInterface.OnClickListener;
 import android.content.Intent;
-import net.sqlcipher.database.SQLiteDatabase;
 import android.net.Uri;
 import android.text.Html;
 import android.view.ViewConfiguration;
+import net.sqlcipher.database.SQLiteDatabase;
 
 public class Utils {
 
@@ -97,11 +96,11 @@ public class Utils {
     }
 
     public static void showErrorMessage(Context _context, String message) {
-        showMessage(_context, "오류발생!", message, android.R.drawable.ic_dialog_alert, null);
+        showMessage(_context, "알림!", message, android.R.drawable.ic_dialog_alert, null);
     }
 
     public static void showFatalErrorMessage(final Context _context, String message) {
-        showMessage(_context, "오류발생!", message, android.R.drawable.ic_dialog_alert, new DialogInterface.OnClickListener() {
+        showMessage(_context, "알림!", message, android.R.drawable.ic_dialog_alert, new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {
                 ((Activity) _context).finish();

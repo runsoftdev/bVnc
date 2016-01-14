@@ -23,6 +23,7 @@ package com.iiordanov.bVNC;
 
 import java.net.Socket;
 import java.util.ArrayList;
+
 import javax.net.ssl.SSLSocket;
 
 import android.util.Log;

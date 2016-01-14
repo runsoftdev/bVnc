@@ -18,8 +18,9 @@
 
 package com.iiordanov.tigervnc.rfb;
 
-import com.iiordanov.tigervnc.rdr.*;
-import java.util.*;
+import java.util.Iterator;
+
+import com.iiordanov.tigervnc.rdr.OutStream;
 
 public class CMsgWriterV3 extends CMsgWriter {
 

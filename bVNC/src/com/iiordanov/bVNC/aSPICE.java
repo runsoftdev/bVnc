@@ -23,34 +23,30 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.PrintWriter;
-import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.Collections;
 import java.util.List;
+
+import com.iiordanov.bVNC.dialogs.ImportExportDialog;
+import com.iiordanov.bVNC.dialogs.ImportTlsCaDialog;
+import com.iiordanov.pubkeygenerator.GeneratePubkeyActivity;
 
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.app.Dialog;
-import android.app.ActivityManager.MemoryInfo;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.res.AssetManager;
-import android.content.res.Configuration;
 import android.content.res.Resources;
-import net.sqlcipher.database.SQLiteDatabase;
 import android.os.Bundle;
 import android.util.Log;
-import android.view.Display;
-import android.view.Menu;
-import android.view.MenuItem;
 import android.view.View;
-import android.view.ViewConfiguration;
 import android.view.WindowManager;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.CompoundButton;
+import android.widget.CompoundButton.OnCheckedChangeListener;
 import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.ListView;
@@ -58,12 +54,6 @@ import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 import android.widget.ToggleButton;
-import android.widget.CompoundButton.OnCheckedChangeListener;
-
-import com.iiordanov.bVNC.dialogs.ImportExportDialog;
-import com.iiordanov.bVNC.dialogs.ImportTlsCaDialog;
-import com.iiordanov.bVNC.dialogs.IntroTextDialog;
-import com.iiordanov.pubkeygenerator.GeneratePubkeyActivity;
 
 /**
  * aSPICE is the Activity for setting up SPICE connections.

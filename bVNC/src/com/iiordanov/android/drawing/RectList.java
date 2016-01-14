@@ -3,11 +3,11 @@
  */
 package com.iiordanov.android.drawing;
 
-import android.graphics.Rect;
-
 import java.util.ArrayList;
 
 import com.iiordanov.util.ObjectPool;
+
+import android.graphics.Rect;
 
 /**
  * A list of rectangular regions that together represent an area of interest.  Provides

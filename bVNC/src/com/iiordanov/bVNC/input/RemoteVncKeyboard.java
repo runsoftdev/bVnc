@@ -1,22 +1,25 @@
 package com.iiordanov.bVNC.input;
 
-import android.os.Handler;
-import android.view.InputDevice;
-import android.view.KeyEvent;
-
 import com.iiordanov.bVNC.MetaKeyBean;
-import com.iiordanov.bVNC.RfbConnectable;
 import com.iiordanov.bVNC.RemoteCanvas;
+import com.iiordanov.bVNC.RfbConnectable;
 import com.iiordanov.tigervnc.rfb.UnicodeToKeysym;
+
+import android.os.Handler;
+import android.view.KeyEvent;
 
 public class RemoteVncKeyboard extends RemoteKeyboard {
     private final static String TAG = "RemoteKeyboard";
+    
 
     public RemoteVncKeyboard (RfbConnectable r, RemoteCanvas v, Handler h) {
         super(r, v, h);
     }
 
+    
     public boolean processLocalKeyEvent(int keyCode, KeyEvent evt, int additionalMetaState) {
+    	if(isChating) return true;
+    	
         android.util.Log.e(TAG, evt.toString() + " " + keyCode);
 
         if (rfb != null && rfb.isInNormalProtocol()) {

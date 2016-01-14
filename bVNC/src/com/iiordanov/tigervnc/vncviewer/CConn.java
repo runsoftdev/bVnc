@@ -31,28 +31,40 @@
 
 package com.iiordanov.tigervnc.vncviewer;
 
-import java.io.IOException;
-import java.io.InputStream;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
-import java.util.jar.Attributes;
-import java.util.jar.Manifest;
-import java.net.URL;
-import java.util.*;
+import java.io.IOException;
+import java.io.InputStream;
+import java.util.Iterator;
+
+import com.iiordanov.bVNC.AbstractConnectionBean;
+import com.iiordanov.bVNC.RemoteCanvas;
+import com.iiordanov.bVNC.RfbConnectable;
+import com.iiordanov.bVNC.input.RemoteKeyboard;
+import com.iiordanov.tigervnc.rdr.JavaInStream;
+import com.iiordanov.tigervnc.rdr.JavaOutStream;
+import com.iiordanov.tigervnc.rfb.CConnection;
+import com.iiordanov.tigervnc.rfb.Encodings;
+import com.iiordanov.tigervnc.rfb.Exception;
+import com.iiordanov.tigervnc.rfb.Hostname;
+import com.iiordanov.tigervnc.rfb.Keysyms;
+import com.iiordanov.tigervnc.rfb.LogWriter;
+import com.iiordanov.tigervnc.rfb.PixelFormat;
+import com.iiordanov.tigervnc.rfb.Point;
+import com.iiordanov.tigervnc.rfb.Rect;
+import com.iiordanov.tigervnc.rfb.Screen;
+import com.iiordanov.tigervnc.rfb.ScreenSet;
+import com.iiordanov.tigervnc.rfb.Security;
+import com.iiordanov.tigervnc.rfb.UnicodeToKeysym;
+import com.iiordanov.tigervnc.rfb.UserMsgBox;
+import com.iiordanov.tigervnc.rfb.UserPasswdGetter;
+import com.iiordanov.tigervnc.rfb.VncAuth;
+import com.iiordanov.tigervnc.rfb.screenTypes;
 
 import android.graphics.Bitmap;
 import android.util.Log;
 import android.view.KeyEvent;
 import android.view.MotionEvent;
-
-import com.iiordanov.bVNC.AbstractConnectionBean;
-import com.iiordanov.bVNC.RemoteCanvas;
-import com.iiordanov.bVNC.AbstractBitmapData;
-import com.iiordanov.bVNC.RfbConnectable;
-import com.iiordanov.bVNC.input.RemoteKeyboard;
-import com.iiordanov.tigervnc.rdr.*;
-import com.iiordanov.tigervnc.rfb.*;
-import com.iiordanov.tigervnc.rfb.Exception;
 
 public class CConn extends CConnection
   implements UserPasswdGetter, UserMsgBox, RfbConnectable

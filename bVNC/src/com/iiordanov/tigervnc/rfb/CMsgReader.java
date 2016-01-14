@@ -24,7 +24,7 @@
 package com.iiordanov.tigervnc.rfb;
 
 import com.iiordanov.bVNC.RemoteCanvas;
-import com.iiordanov.tigervnc.rdr.*;
+import com.iiordanov.tigervnc.rdr.InStream;
 
 abstract public class CMsgReader {
 

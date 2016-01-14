@@ -3,7 +3,6 @@ package com.iiordanov.bVNC.input;
 import com.iiordanov.bVNC.RemoteCanvas;
 import com.iiordanov.bVNC.RfbConnectable;
 
-import android.R.integer;
 import android.content.Context;
 import android.content.res.Configuration;
 import android.os.Build;
@@ -11,7 +10,6 @@ import android.os.Handler;
 import android.view.InputDevice;
 import android.view.KeyEvent;
 import android.view.MotionEvent;
-import android.view.ViewConfiguration;
 
 public abstract class RemotePointer {
     

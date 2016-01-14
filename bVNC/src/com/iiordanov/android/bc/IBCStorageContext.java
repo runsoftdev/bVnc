@@ -4,8 +4,6 @@
  */
 package com.iiordanov.android.bc;
 
-import android.content.Context;
-
 import java.io.File;
 
 import com.iiordanov.bVNC.MainConfiguration;
