@@ -2,7 +2,7 @@ package com.iiordanov.chat;
 
 import java.util.ArrayList;
 
-import com.iiordanov.bVNC.R;
+import com.iiordanov.runsoft.bVNC.R;
 
 import android.content.Context;
 import android.view.LayoutInflater;

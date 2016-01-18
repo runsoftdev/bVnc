@@ -46,8 +46,8 @@ import javax.net.ssl.TrustManager;
 import javax.net.ssl.TrustManagerFactory;
 import javax.net.ssl.X509TrustManager;
 
-import com.iiordanov.bVNC.Constants;
-import com.iiordanov.bVNC.RemoteCanvas;
+import com.iiordanov.runsoft.bVNC.Constants;
+import com.iiordanov.runsoft.bVNC.RemoteCanvas;
 import com.iiordanov.tigervnc.rdr.InStream;
 import com.iiordanov.tigervnc.rdr.JavaInStream;
 import com.iiordanov.tigervnc.rdr.JavaOutStream;

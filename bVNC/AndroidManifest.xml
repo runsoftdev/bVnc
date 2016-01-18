@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.iiordanov.bVNC"
+    package="com.iiordanov.runsoft.bVNC"
     android:installLocation="auto"
-    android:versionCode="3790"
+    android:versionCode="3791"
     android:versionName="v3.8.0" >
 
     <uses-sdk android:minSdkVersion="14" >

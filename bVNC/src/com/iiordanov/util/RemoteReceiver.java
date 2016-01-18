@@ -1,6 +1,6 @@
 package com.iiordanov.util;
 
-import com.iiordanov.bVNC.RemoteCanvasActivity;
+import com.iiordanov.runsoft.bVNC.RemoteCanvasActivity;
 
 import android.content.BroadcastReceiver;
 import android.content.Context;

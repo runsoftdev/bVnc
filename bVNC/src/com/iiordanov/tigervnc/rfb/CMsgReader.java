@@ -23,7 +23,7 @@
 
 package com.iiordanov.tigervnc.rfb;
 
-import com.iiordanov.bVNC.RemoteCanvas;
+import com.iiordanov.runsoft.bVNC.RemoteCanvas;
 import com.iiordanov.tigervnc.rdr.InStream;
 
 abstract public class CMsgReader {

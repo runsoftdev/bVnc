@@ -22,7 +22,7 @@ import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 
-import com.iiordanov.bVNC.RemoteCanvas;
+import com.iiordanov.runsoft.bVNC.RemoteCanvas;
 import com.iiordanov.tigervnc.rdr.InStream;
 import com.iiordanov.tigervnc.rdr.OutStream;
 

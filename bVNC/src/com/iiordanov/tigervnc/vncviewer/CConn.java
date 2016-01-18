@@ -37,10 +37,10 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.util.Iterator;
 
-import com.iiordanov.bVNC.AbstractConnectionBean;
-import com.iiordanov.bVNC.RemoteCanvas;
-import com.iiordanov.bVNC.RfbConnectable;
-import com.iiordanov.bVNC.input.RemoteKeyboard;
+import com.iiordanov.runsoft.bVNC.AbstractConnectionBean;
+import com.iiordanov.runsoft.bVNC.RemoteCanvas;
+import com.iiordanov.runsoft.bVNC.RfbConnectable;
+import com.iiordanov.runsoft.bVNC.input.RemoteKeyboard;
 import com.iiordanov.tigervnc.rdr.JavaInStream;
 import com.iiordanov.tigervnc.rdr.JavaOutStream;
 import com.iiordanov.tigervnc.rfb.CConnection;

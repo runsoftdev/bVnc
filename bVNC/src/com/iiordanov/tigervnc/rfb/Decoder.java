@@ -18,7 +18,7 @@
 
 package com.iiordanov.tigervnc.rfb;
 
-import com.iiordanov.bVNC.RemoteCanvas;
+import com.iiordanov.runsoft.bVNC.RemoteCanvas;
 
 abstract public class Decoder {
 
