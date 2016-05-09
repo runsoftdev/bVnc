@@ -60,6 +60,7 @@ public class Constants {
     public static final String PARAM_CACERT_PATH = "CaCertPath";
     public static final String PARAM_CERT_SUBJECT = "CertSubject";
     public static final String PARAM_REPEATER_ID = "RepeaterId";
+    public static final String PARAM_HOST_KEY = "hostkey";
     
     public static final int SECTYPE_NONE = 1;
     public static final int SECTYPE_VNC = 2;

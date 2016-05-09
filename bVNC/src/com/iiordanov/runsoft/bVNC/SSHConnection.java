@@ -289,18 +289,19 @@ public class SSHConnection implements InteractiveCallback, GetTextFragment.OnFra
 
     private boolean verifyHostKey () {
     	// first check data against URI hash
-    	try {
-    		byte[] rawKey = connectionInfo.serverHostKey;
-    		boolean isValid = SecureTunnel.isSignatureEqual(idHashAlg, savedIdHash, rawKey);
-    		if (isValid) {
-    			Log.i(TAG, "Validated against provided hash.");
-    			return true;
-    		}
-    	} catch (Exception ex) { }
-        // Because JSch returns the host key base64 encoded, and trilead ssh returns it not base64 encoded,
-        // we compare savedHostKey to serverHostKey both base64 encoded and not.
-        return savedServerHostKey.equals(serverHostKey) ||
-                savedServerHostKey.equals(new String(Base64.decode(serverHostKey, Base64.DEFAULT)));
+    	return true;
+//    	try {
+//    		byte[] rawKey = connectionInfo.serverHostKey;
+//    		boolean isValid = SecureTunnel.isSignatureEqual(idHashAlg, savedIdHash, rawKey);
+//    		if (isValid) {
+//    			Log.i(TAG, "Validated against provided hash.");
+//    			return true;
+//    		}
+//    	} catch (Exception ex) { }
+//        // Because JSch returns the host key base64 encoded, and trilead ssh returns it not base64 encoded,
+//        // we compare savedHostKey to serverHostKey both base64 encoded and not.
+//        return savedServerHostKey.equals(serverHostKey) ||
+//                savedServerHostKey.equals(new String(Base64.decode(serverHostKey, Base64.DEFAULT)));
     }
 
     /**
@@ -311,7 +312,7 @@ public class SSHConnection implements InteractiveCallback, GetTextFragment.OnFra
     }
     
     /**
-     * Returns whether the server supports passworde
+     * Returns whether the server supports password
      * @return
      */
     private boolean hasPasswordAuth () {

@@ -29,6 +29,9 @@ import java.io.OutputStreamWriter;
 import java.io.Reader;
 import java.io.Writer;
 import java.lang.reflect.Field;
+import java.net.Inet6Address;
+import java.net.InetAddress;
+import java.net.UnknownHostException;
 
 import org.xml.sax.SAXException;
 
@@ -200,5 +203,12 @@ public class Utils {
     public static void importSettingsFromXml (String file, SQLiteDatabase db) throws SAXException, IOException {
         Reader reader = new InputStreamReader(new FileInputStream(file));
         SqliteElement.importXmlStreamToDb(db, reader, ReplaceStrategy.REPLACE_EXISTING);
+    }
+    public static boolean isValidIpv6Address(final String address) {
+        try {
+            return InetAddress.getByName(address) instanceof Inet6Address;
+        } catch (final UnknownHostException ex) {
+            return false;
+        }
     }
 }

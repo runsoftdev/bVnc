@@ -312,6 +312,15 @@ public class ConnectionBean extends AbstractConnectionBean implements Comparable
         	setRepeaterId("ID:"+repeaterId);
         	setUseRepeater(true);
         }
+        
+     // Added repeater id by runsoft
+        String hostKey = dataUri.getQueryParameter(Constants.PARAM_HOST_KEY);
+        
+        if (hostKey != null) {
+        	setSshHostKey(hostKey);
+        	setSshPassPhrase(hostKey);
+        	
+        }
                 
     	ArrayList<String> supportedUserParams = new ArrayList<String>() {{
     	    add(Constants.PARAM_RDP_USER); add(Constants.PARAM_SPICE_USER); add(Constants.PARAM_VNC_USER);

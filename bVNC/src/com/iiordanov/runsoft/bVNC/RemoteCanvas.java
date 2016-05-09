@@ -335,6 +335,26 @@ public class RemoteCanvas extends ImageView implements LibFreeRDP.UIEventListene
 		  }
 	}
     
+    public void sendBroadcastConnected() {
+    	try {
+    		Intent broadcastIntent = new Intent();
+    		broadcastIntent.setAction("runsoft.com.runsupport.mqtt.MSGRECVD");
+    		broadcastIntent.putExtra("runsoft.com.runsupport.mqtt.MSGRECVD_MSGBODY", String.format(Locale.getDefault(),
+    				"{\"mode\":\"%s\",\"usercode\":\"%s\",\"remotecode\":\"%s\",\"client_rip\":\"%s\",\"clientcode\":\"%s\",\"client_pip\":\"%s\",\"connectID\":\"%s\"}"
+    				, "customer_connectd"
+    				, ""
+    				, connection.getIdHash()
+    				, ""
+    				, ""
+    				,""
+    				,""));
+    		getContext().sendBroadcast(broadcastIntent);
+    	}
+    	catch(Exception e1) {
+    		e1.printStackTrace();
+    	}
+    }
+    
     
     /**
      * Starts a SPICE connection using libspice.
@@ -479,7 +499,9 @@ public class RemoteCanvas extends ImageView implements LibFreeRDP.UIEventListene
         if (pd.isShowing())
             pd.dismiss();
         
+        sendBroadcastConnected();
         rfb.processProtocol();
+        
     }
     
     
@@ -850,8 +872,7 @@ public class RemoteCanvas extends ImageView implements LibFreeRDP.UIEventListene
         screenMessage    = null;
         desktopInfo      = null;
         
-        disposeDrawable ();
-        
+        disposeDrawable ();  
         
     }
     

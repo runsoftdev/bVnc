@@ -221,17 +221,18 @@ public class RemoteCanvasActivity extends FragmentActivity implements OnKeyListe
             Bundle extras = i.getExtras();
 
             if (extras != null) {
-                  connection.Gen_populate((ContentValues) extras.getParcelable(Constants.CONNECTION));
+            	connection.Gen_populate((ContentValues) extras.getParcelable(Constants.CONNECTION));
             }
 
             // Parse a HOST:PORT entry
             String host = connection.getAddress();
-            if (host.indexOf(':') > -1) {
+            if (!Utils.isValidIpv6Address(host) && host.indexOf(':') > -1) {
                 String p = host.substring(host.indexOf(':') + 1);
                 try {
-                    connection.setPort(Integer.parseInt(p));
+                    int parsedPort = Integer.parseInt(p);
+                    connection.setPort(parsedPort);
+                    connection.setAddress(host.substring(0, host.indexOf(':')));
                 } catch (Exception e) {}
-                connection.setAddress(host.substring(0, host.indexOf(':')));
               }
             
             if (connection.getPort() == 0)
@@ -1102,6 +1103,7 @@ public class RemoteCanvasActivity extends FragmentActivity implements OnKeyListe
                                              canvas.absoluteYPosition + canvas.getVisibleHeight() / 2);
             return true;
         case R.id.itemDisconnect:
+        	
             canvas.closeConnection();
             finish();
             return true;
