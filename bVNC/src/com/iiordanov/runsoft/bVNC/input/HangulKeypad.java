@@ -134,8 +134,12 @@ public class HangulKeypad extends LinearLayout implements OnClickListener {
 		key.setOnClickListener(this);
 		key = (Button) findViewById(R.id.key_show_eng);		
 		key.setOnClickListener(this);
+		key = (Button) findViewById(R.id.key_slash);		
+		key.setOnClickListener(this);
+		key = (Button) findViewById(R.id.key_semicolon);		
+		key.setOnClickListener(this);		
 	}
-
+	
 	@Override
 	public void onClick(View v) {
 		if(v.getId() == R.id.key_hide) {
@@ -161,11 +165,7 @@ public class HangulKeypad extends LinearLayout implements OnClickListener {
 		else if(v.getId() == R.id.key_swap) {
 			mRemotecanvas.getKeyboard().processLocalKeyEvent(144, new KeyEvent(144,0));
 		}
-		else if(v.getId() == R.id.key_show_eng) {
-			if(mOnClickListener != null) {
-				mOnClickListener.onClick(v);
-			}
-		}
+		
 		else if(v.getId() == R.id.key_enter) {
 			mRemotecanvas.getKeyboard().processLocalKeyEvent(KeyEvent.KEYCODE_ENTER, new KeyEvent(KeyEvent.ACTION_DOWN,KeyEvent.KEYCODE_ENTER));
 			
@@ -188,29 +188,83 @@ public class HangulKeypad extends LinearLayout implements OnClickListener {
 		key.setText(!isShiftClicked?"Shift(On)":"Shift(Off)");
 		
 		key = (Button) findViewById(R.id.key_q);		
-		key.setText(isShiftClicked ? "ㅂ" :"ㅃ");
+		key.setText(isShiftClicked ? "ㅂ[Q]" :"ㅃ[Q]");
 		
 		key = (Button) findViewById(R.id.key_w);		
-		key.setText(isShiftClicked ? "ㅈ" :"ㅉ");
+		key.setText(isShiftClicked ? "ㅈ[W]" :"ㅉ[W]");
 		
 		key = (Button) findViewById(R.id.key_e);		
-		key.setText(isShiftClicked ? "ㄷ" :"ㄸ");
+		key.setText(isShiftClicked ? "ㄷ[E]" :"ㄸ[E]");
 		
 		key = (Button) findViewById(R.id.key_r);		
-		key.setText(isShiftClicked ? "ㄱ" :"ㄲ");
+		key.setText(isShiftClicked ? "ㄱ[R]" :"ㄲ[R]");
 		
 		key = (Button) findViewById(R.id.key_t);		
-		key.setText(isShiftClicked ? "ㅅ" :"ㅆ");
+		key.setText(isShiftClicked ? "ㅅ[T]" :"ㅆ[T]");
 		
 		key = (Button) findViewById(R.id.key_o);		
-		key.setText(isShiftClicked ? "ㅐ" :"ㅒ");
+		key.setText(isShiftClicked ? "ㅐ[O]" :"ㅒ[O]");
 		
 		key = (Button) findViewById(R.id.key_p);		
-		key.setText(isShiftClicked ? "ㅔ" :"ㅖ");
+		key.setText(isShiftClicked ? "ㅔ[P]" :"ㅖ[P]");
 		
+		key = (Button) findViewById(R.id.key_slash);		
+		key.setText(isShiftClicked ? "/" :"?");		
+		key.setTag(isShiftClicked ? "/" :"?");
+		
+		key = (Button) findViewById(R.id.key_dot);		
+		key.setText(isShiftClicked ? "." :">");		
+		key.setTag(isShiftClicked ? "." :">");
+		
+		key = (Button) findViewById(R.id.key_show_eng);		
+		key.setText(isShiftClicked ? "," :"<");
+		key.setTag(isShiftClicked ? "," :"<");
+		
+		key = (Button) findViewById(R.id.key_semicolon);		
+		key.setText(isShiftClicked ? ";" :":");		
+		key.setTag(isShiftClicked ? ";" :":");
+		
+		key = (Button) findViewById(R.id.num1);		
+		key.setText(isShiftClicked ? "1" :"!");		
+		key.setTag(isShiftClicked ? "1" :"!");
+		
+		key = (Button) findViewById(R.id.num2);		
+		key.setText(isShiftClicked ? "2" :"@");		
+		key.setTag(isShiftClicked ? "2" :"@");
+		
+		key = (Button) findViewById(R.id.num3);		
+		key.setText(isShiftClicked ? "3" :"#");		
+		key.setTag(isShiftClicked ? "3" :"#");
+		
+		key = (Button) findViewById(R.id.num4);		
+		key.setText(isShiftClicked ? "4" :"$");		
+		key.setTag(isShiftClicked ? "4" :"$");
+		
+		key = (Button) findViewById(R.id.num5);		
+		key.setText(isShiftClicked ? "5" :"%");		
+		key.setTag(isShiftClicked ? "5" :"%");
+		
+		key = (Button) findViewById(R.id.num6);		
+		key.setText(isShiftClicked ? "6" :"^");		
+		key.setTag(isShiftClicked ? "6" :"^");
+		
+		key = (Button) findViewById(R.id.num7);		
+		key.setText(isShiftClicked ? "7" :"&");		
+		key.setTag(isShiftClicked ? "7" :"&");
+		
+		key = (Button) findViewById(R.id.num8);		
+		key.setText(isShiftClicked ? "8" :"*");		
+		key.setTag(isShiftClicked ? "8" :"*");
+		
+		key = (Button) findViewById(R.id.num9);		
+		key.setText(isShiftClicked ? "9" :"(");		
+		key.setTag(isShiftClicked ? "9" :"(");
+		
+		key = (Button) findViewById(R.id.num0);		
+		key.setText(isShiftClicked ? "0" :")");		
+		key.setTag(isShiftClicked ? "0" :")");		
 		isShiftClicked = !isShiftClicked;
 	}
 }
-
 
 

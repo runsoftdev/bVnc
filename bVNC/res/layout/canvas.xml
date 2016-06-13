@@ -16,7 +16,7 @@
         android:layout_height="wrap_content"
         android:layout_alignParentRight="true"
         android:layout_centerVertical="true"
-        android:padding="10sp" />
+        android:padding="10sp"/>
 
     <ImageButton
         android:id="@+id/keyStow"

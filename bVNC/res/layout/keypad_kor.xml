@@ -116,13 +116,13 @@
             android:layout_height="@dimen/key_hangul_height"
             android:orientation="horizontal"
             android:weightSum="100" >
-
+            
             <Button
                 android:id="@+id/key_q"
                 android:layout_width="wrap_content"
                 android:layout_height="@dimen/key_hangul_height"
                 android:layout_weight="10"
-                android:text="ㅂ"
+                android:text="ㅂ[Q]"
                 android:tag="q"
                 android:textSize="@dimen/key_hangul_font_size">
             </Button>
@@ -131,7 +131,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="@dimen/key_hangul_height"
                 android:layout_weight="10"
-                android:text="ㅈ"
+                android:text="ㅈ[W]"
                 android:tag="w"
                 android:textSize="@dimen/key_hangul_font_size">
             </Button>
@@ -140,7 +140,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="@dimen/key_hangul_height"
                 android:layout_weight="10"
-                android:text="ㄷ"
+                android:text="ㄷ[E]"
                 android:tag="e"
                 android:textSize="@dimen/key_hangul_font_size">
             </Button>
@@ -149,7 +149,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="@dimen/key_hangul_height"
                 android:layout_weight="10"
-                android:text="ㄱ" 
+                android:text="ㄱ[R]" 
                 android:tag="r"
                 android:textSize="@dimen/key_hangul_font_size">
             </Button>
@@ -158,7 +158,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="@dimen/key_hangul_height"
                 android:layout_weight="10"
-                android:text="ㅅ"
+                android:text="ㅅ[T]"
                 android:tag="t"
                 android:textSize="@dimen/key_hangul_font_size">
             </Button>
@@ -167,7 +167,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="@dimen/key_hangul_height"
                 android:layout_weight="10"
-                android:text="ㅛ" 
+                android:text="ㅛ[Y]" 
                 android:tag="y"
                 android:textSize="@dimen/key_hangul_font_size">
             </Button>
@@ -176,7 +176,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="@dimen/key_hangul_height"
                 android:layout_weight="10"
-                android:text="ㅕ"
+                android:text="ㅕ[U]"
                 android:tag="u"
                 android:textSize="@dimen/key_hangul_font_size">
             </Button>
@@ -185,7 +185,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="@dimen/key_hangul_height"
                 android:layout_weight="10"
-                android:text="ㅑ"
+                android:text="ㅑ[I]"
                 android:tag="i"
                 android:textSize="@dimen/key_hangul_font_size">
             </Button>
@@ -194,7 +194,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="@dimen/key_hangul_height"
                 android:layout_weight="10"
-                android:text="ㅐ" 
+                android:text="ㅐ[O]" 
                 android:tag="o"
                 android:textSize="@dimen/key_hangul_font_size">
             </Button>
@@ -203,7 +203,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="@dimen/key_hangul_height"
                 android:layout_weight="10"
-                android:text="ㅔ"
+                android:text="ㅔ[P]"
                 android:tag="p"
                 android:textSize="@dimen/key_hangul_font_size">
             </Button>
@@ -222,7 +222,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="@dimen/key_hangul_height"
                 android:layout_weight="10"
-                android:text="ㅁ"
+                android:text="ㅁ[A]"
                 android:tag="a"
                 android:textSize="@dimen/key_hangul_font_size">
             </Button>
@@ -231,7 +231,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="@dimen/key_hangul_height"
                 android:layout_weight="10"
-                android:text="ㄴ"
+                android:text="ㄴ[S]"
                 android:tag="s"
                 android:textSize="@dimen/key_hangul_font_size">
             </Button>
@@ -240,7 +240,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="@dimen/key_hangul_height"
                 android:layout_weight="10"
-                android:text="ㅇ"
+                android:text="ㅇ[D]"
                 android:tag="d"
                 android:textSize="@dimen/key_hangul_font_size">
             </Button>
@@ -249,7 +249,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="@dimen/key_hangul_height"
                 android:layout_weight="10"
-                android:text="ㄹ" 
+                android:text="ㄹ[F]" 
                 android:tag="f"
                 android:textSize="@dimen/key_hangul_font_size">
             </Button>
@@ -258,7 +258,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="@dimen/key_hangul_height"
                 android:layout_weight="10"
-                android:text="ㅎ"
+                android:text="ㅎ[G]"
                 android:tag="g"
                 android:textSize="@dimen/key_hangul_font_size">
             </Button>
@@ -267,7 +267,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="@dimen/key_hangul_height"
                 android:layout_weight="10"
-                android:text="ㅗ" 
+                android:text="ㅗ[H]" 
                 android:tag="h"
                 android:textSize="@dimen/key_hangul_font_size">
             </Button>
@@ -276,7 +276,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="@dimen/key_hangul_height"
                 android:layout_weight="10"
-                android:text="ㅓ"
+                android:text="ㅓ[J]"
                 android:tag="j"
                 android:textSize="@dimen/key_hangul_font_size">
             </Button>
@@ -285,7 +285,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="@dimen/key_hangul_height"
                 android:layout_weight="10"
-                android:text="ㅏ"
+                android:text="ㅏ[K]"
                 android:tag="k"
                 android:textSize="@dimen/key_hangul_font_size">
             </Button>
@@ -294,10 +294,19 @@
                 android:layout_width="wrap_content"
                 android:layout_height="@dimen/key_hangul_height"
                 android:layout_weight="10"
-                android:text="ㅣ" 
+                android:text="ㅣ[L]" 
                 android:tag="l"
                 android:textSize="@dimen/key_hangul_font_size">
-            </Button>            
+            </Button>          
+            <Button
+                android:id="@+id/key_semicolon"
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/key_hangul_height"
+                android:layout_weight="10"
+                android:text=";" 
+                android:tag=";"
+                android:textSize="@dimen/key_hangul_font_size">
+            </Button>  
         </TableRow>
         <TableRow
             android:id="@+id/hangulLine3"
@@ -321,7 +330,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="@dimen/key_hangul_height"
                 android:layout_weight="10"
-                android:text="ㅋ"
+                android:text="ㅋ[Z]"
                 android:tag="z"
                 android:textSize="@dimen/key_hangul_font_size">
             </Button>
@@ -330,7 +339,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="@dimen/key_hangul_height"
                 android:layout_weight="10"
-                android:text="ㅌ"
+                android:text="ㅌ[X]"
                 android:tag="x"
                 android:textSize="@dimen/key_hangul_font_size">
             </Button>
@@ -339,7 +348,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="@dimen/key_hangul_height"
                 android:layout_weight="10"
-                android:text="ㅊ"
+                android:text="ㅊ[C]"
                 android:tag="c"
                 android:textSize="@dimen/key_hangul_font_size">
             </Button>
@@ -348,7 +357,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="@dimen/key_hangul_height"
                 android:layout_weight="10"
-                android:text="ㅍ" 
+                android:text="ㅍ[V]" 
                 android:tag="v"
                 android:textSize="@dimen/key_hangul_font_size">
             </Button>
@@ -357,7 +366,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="@dimen/key_hangul_height"
                 android:layout_weight="10"
-                android:text="ㅠ"
+                android:text="ㅠ[B]"
                 android:tag="b"
                 android:textSize="@dimen/key_hangul_font_size">
             </Button>
@@ -366,7 +375,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="@dimen/key_hangul_height"
                 android:layout_weight="10"
-                android:text="ㅜ" 
+                android:text="ㅜ[N]" 
                 android:tag="n"
                 android:textSize="@dimen/key_hangul_font_size">
             </Button>
@@ -375,7 +384,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="@dimen/key_hangul_height"
                 android:layout_weight="10"
-                android:text="ㅡ"
+                android:text="ㅡ[M]"
                 android:tag="m"
                 android:textSize="@dimen/key_hangul_font_size">
             </Button>
@@ -401,19 +410,10 @@
                 android:id="@+id/key_esc"
                 android:layout_width="wrap_content"
                 android:layout_height="@dimen/key_hangul_height"
-                android:layout_weight="8"
+                android:layout_weight="5"
                 android:text="Esc"
                 android:tag="0xff1b"
                 android:textSize="@dimen/key_hangul_font_size">
-            </Button>
-            <Button
-                android:id="@+id/key_show_eng"
-                android:layout_width="wrap_content"
-                android:layout_height="@dimen/key_hangul_height"
-                android:layout_weight="10"
-                android:text="영문키보드"
-                android:tag="0xff1b"
-                android:textSize="@dimen/key_func_font_size">
             </Button>
             <Button
                 android:id="@+id/key_hide"
@@ -425,12 +425,30 @@
                 android:textSize="@dimen/key_hangul_font_size">
             </Button>
             <Button
+                android:id="@+id/key_show_eng"
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/key_hangul_height"
+                android:layout_weight="5"
+                android:text=","
+                android:tag=","
+                android:textSize="@dimen/key_func_font_size">
+            </Button>            
+            <Button
                 android:id="@+id/key_dot"
                 android:layout_width="wrap_content"
                 android:layout_height="@dimen/key_hangul_height"
                 android:layout_weight="5"
                 android:text="."
                 android:tag="."
+                android:textSize="@dimen/key_hangul_font_size">
+            </Button>
+            <Button
+                android:id="@+id/key_slash"
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/key_hangul_height"
+                android:layout_weight="5"
+                android:text="/"
+                android:tag="/"
                 android:textSize="@dimen/key_hangul_font_size">
             </Button>
             
@@ -448,7 +466,7 @@
                 android:id="@+id/key_swap"
                 android:layout_width="wrap_content"
                 android:layout_height="@dimen/key_hangul_height"
-                android:layout_weight="8"
+                android:layout_weight="5"
                 android:text="한/영" 
                 android:tag="0xff31"
                 android:textSize="@dimen/key_hangul_font_size">

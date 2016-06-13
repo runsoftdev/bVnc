@@ -1369,7 +1369,7 @@ public class RemoteCanvasActivity extends FragmentActivity implements OnKeyListe
     
     public void showZoomer(boolean force) {
         if (force || zoomer.getVisibility() != View.VISIBLE) {
-            zoomer.show();
+//            zoomer.show();
             hideZoomAfterMs = SystemClock.uptimeMillis() + ZOOM_HIDE_DELAY_MS;
             canvas.handler.postAtTime(hideZoomInstance, hideZoomAfterMs + 10);
         }
