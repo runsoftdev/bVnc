@@ -5,8 +5,8 @@
 	<dimen name="app_minimumsize_w">1.0dip</dimen>
 	<dimen name="app_minimumsize_h">1.0dip</dimen>
 	
-	<dimen name="key_hangul_height">31dip</dimen>
-	<dimen name="key_hangul_font_size">9.66sp</dimen>
-	<dimen name="key_func_font_size">8.66sp</dimen>
+	<dimen name="key_hangul_height">34dip</dimen>
+	<dimen name="key_hangul_font_size">9.33sp</dimen>
+	<dimen name="key_func_font_size">8.33sp</dimen>
 	
 </resources>

@@ -326,8 +326,8 @@ public class RemoteCanvas extends ImageView implements LibFreeRDP.UIEventListene
 		            , connection.getIdHash()
 		            , ""
 		            , ""
-		          ,""
-		          ,""));
+		            , ""
+		            , ""));
 		    getContext().sendBroadcast(broadcastIntent);
 		  }
 		  catch(Exception e1) {
@@ -339,15 +339,15 @@ public class RemoteCanvas extends ImageView implements LibFreeRDP.UIEventListene
     	try {
     		Intent broadcastIntent = new Intent();
     		broadcastIntent.setAction("runsoft.com.runsupport.mqtt.MSGRECVD");
-    		broadcastIntent.putExtra("runsoft.com.runsupport.mqtt.MSGRECVD_MSGBODY", String.format(Locale.getDefault(),
-    				"{\"mode\":\"%s\",\"usercode\":\"%s\",\"remotecode\":\"%s\",\"client_rip\":\"%s\",\"clientcode\":\"%s\",\"client_pip\":\"%s\",\"connectID\":\"%s\"}"
+    		broadcastIntent.putExtra("runsoft.com.runsupport.mqtt.MSGRECVD_MSGBODY", String.format(Locale.getDefault()
+    				, "{\"mode\":\"%s\",\"usercode\":\"%s\",\"remotecode\":\"%s\",\"client_rip\":\"%s\",\"clientcode\":\"%s\",\"client_pip\":\"%s\",\"connectID\":\"%s\"}"
     				, "customer_connectd"
     				, ""
     				, connection.getIdHash()
     				, ""
     				, ""
-    				,""
-    				,""));
+    				, ""
+    				, ""));
     		getContext().sendBroadcast(broadcastIntent);
     	}
     	catch(Exception e1) {
